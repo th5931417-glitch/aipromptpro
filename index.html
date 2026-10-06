@@ -11,32 +11,12 @@
     <meta name="author" content="AIPrompts Global Hub">
     <meta name="robots" content="index, follow">
 
-    <!-- Open Graph for Global Social Sharing -->
-    <meta property="og:title" content="Global AI Prompts Marketplace">
-    <meta property="og:description" content="Scale your business globally with elite verified AI prompt packages.">
-    <meta property="og:type" content="website">
-
-    <!-- Structured Data for Google Top Ranking -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Global AI Prompts Marketplace",
-      "url": "https://aipromptpro.app",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://aipromptpro.app?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
-
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-[#070b14] text-slate-100 font-sans min-h-screen flex flex-col justify-between selection:bg-orange-500 selection:text-white">
 
-    <!-- AliExpress Style Top Global Flash Sale Banner -->
+    <!-- Flash Sale Banner -->
     <div class="bg-gradient-to-r from-orange-600 via-amber-600 to-yellow-600 text-center py-2 px-4 text-xs font-bold flex items-center justify-center gap-2 text-white shadow-md">
         <span>⚡ <strong>Global Super Deal:</strong> Unlock All Enterprise Prompts for $4.99 (Save 80% Today!)</span>
         <a href="https://app.dodopayments.com/buy" target="_blank" class="bg-black text-amber-400 px-3 py-0.5 rounded-full text-[10px] uppercase tracking-wider hover:bg-gray-900 transition shadow">Get Access</a>
@@ -49,10 +29,10 @@
             <h1 class="text-base font-extrabold tracking-tight bg-gradient-to-r from-orange-400 to-amber-200 bg-clip-text text-transparent">PromptsMarket Global</h1>
         </div>
         <div class="flex items-center gap-2">
-            <a href="https://app.dodopayments.com/buy" target="_blank" class="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-black text-xs px-3.5 py-1.5 rounded-full font-extrabold shadow-lg shadow-orange-500/20 transition flex items-center gap-1">
+            <a href="https://app.dodopayments.com/buy" target="_blank" class="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-black text-xs px-3.5 py-1.5 rounded-full font-extrabold shadow-lg shadow-orange-500/20 transition">
                 <span>👑 Pro Pass ($4.99)</span>
             </a>
-            <button id="authBtn" onclick="toggleAuthModal()" class="bg-slate-800 hover:bg-slate-700 text-xs px-3 py-1.5 rounded-full font-medium border border-slate-700 transition">
+            <button onclick="toggleAuthModal()" class="bg-slate-800 hover:bg-slate-700 text-xs px-3 py-1.5 rounded-full font-medium border border-slate-700 transition">
                 Account
             </button>
         </div>
@@ -69,38 +49,22 @@
 
         <!-- Search Bar -->
         <div class="mb-4">
-            <input type="text" id="searchInput" oninput="filterPrompts()" placeholder="🔍 Search global prompts (e.g., Marketing, Python, SEO)..." class="w-full bg-[#101726] border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500 shadow-inner">
+            <input type="text" id="searchInput" oninput="filterPrompts()" placeholder="🔍 Search 68+ global prompts..." class="w-full bg-[#101726] border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500 shadow-inner">
         </div>
 
-        <!-- AliExpress Style Trust & Buyer Protection Bar -->
+        <!-- Trust Bar -->
         <div class="mb-5 bg-[#101726] border border-slate-800 rounded-xl p-3 flex justify-between items-center text-xs text-slate-300 shadow-md">
-            <div class="flex items-center gap-1.5">
-                <span class="text-emerald-400 font-bold">✔ Buyer Protection</span>
-            </div>
-            <div class="flex items-center gap-1.5">
-                <span class="text-amber-400 font-bold">★ 4.9/5 (1,420 Reviews)</span>
-            </div>
+            <div class="flex items-center gap-1.5"><span class="text-emerald-400 font-bold">✔ Buyer Protection</span></div>
+            <div class="flex items-center gap-1.5"><span class="text-amber-400 font-bold">★ 4.9/5 (1,420 Reviews)</span></div>
         </div>
 
         <!-- Prompts Catalog List -->
         <div id="promptsList" class="space-y-3">
-            <!-- Populated via JavaScript -->
-        </div>
-
-        <!-- Global Verified Buyer Testimonials Section -->
-        <div class="mt-8 pt-5 border-t border-slate-800">
-            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 text-center">Global Verified Customer Feedback</h3>
-            <div class="bg-[#101726] border border-slate-800 rounded-xl p-3.5 text-xs text-slate-300 space-y-2 shadow-sm">
-                <p class="italic">"Bought the pro pass for my marketing agency in London. These prompts save our team countless hours every single week!"</p>
-                <div class="flex justify-between items-center text-[10px] text-slate-500 pt-1 border-t border-slate-800">
-                    <span>— Marcus V., Verified Buyer (UK)</span>
-                    <span class="text-amber-400">★★★★★</span>
-                </div>
-            </div>
+            <!-- JavaScript will render prompts here -->
         </div>
     </main>
 
-    <!-- Detail View Modal with Custom Variable Injector -->
+    <!-- Detail View Modal -->
     <div id="detailModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden z-50 p-4 flex items-center justify-center">
         <div class="bg-[#101726] border border-slate-800 w-full max-w-lg rounded-2xl p-5 relative max-h-[90vh] overflow-y-auto shadow-2xl">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl font-bold">✕</button>
@@ -112,33 +76,17 @@
     <div id="authModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden z-50 p-4 flex items-center justify-center">
         <div class="bg-[#101726] border border-slate-800 w-full max-w-md rounded-2xl p-6 relative shadow-2xl">
             <button onclick="toggleAuthModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl font-bold">✕</button>
-            <div id="authModalContent">
+            <div id="authForm" class="space-y-4">
                 <h2 class="text-lg font-bold mb-4">Member Portal</h2>
-                <div id="authForm" class="space-y-4">
-                    <div>
-                        <label class="text-xs text-slate-400 block mb-1">Email Address</label>
-                        <input type="email" id="userEmailInput" placeholder="name@example.com" class="w-full bg-[#151e30] border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500">
-                    </div>
-                    <button onclick="handleAuthAction()" class="w-full bg-orange-600 hover:bg-orange-500 py-3 rounded-xl font-bold text-sm transition shadow-lg shadow-orange-600/30">Continue</button>
+                <div>
+                    <label class="text-xs text-slate-400 block mb-1">Email Address</label>
+                    <input type="email" id="userEmailInput" placeholder="name@example.com" class="w-full bg-[#151e30] border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500">
                 </div>
-                <div id="loggedInView" class="hidden text-center py-4 space-y-4">
-                    <p class="text-sm text-slate-300">Signed in as: <span id="displayEmail" class="font-bold text-orange-400"></span></p>
-                    <button onclick="handleLogout()" class="w-full bg-red-600/80 hover:bg-red-600 py-2.5 rounded-xl font-semibold text-sm transition">Sign Out</button>
-                </div>
+                <button onclick="handleAuthAction()" class="w-full bg-orange-600 hover:bg-orange-500 py-3 rounded-xl font-bold text-sm transition">Continue</button>
             </div>
-        </div>
-    </div>
-
-    <!-- Privacy & Terms Modal -->
-    <div id="privacyModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden z-50 p-4 flex items-center justify-center">
-        <div class="bg-[#101726] border border-slate-800 w-full max-w-lg rounded-2xl p-6 relative max-h-[90vh] overflow-y-auto shadow-2xl">
-            <button onclick="closePrivacy()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl font-bold">✕</button>
-            <h2 class="text-lg font-bold mb-3">Global Buyer Policy</h2>
-            <p class="text-xs text-slate-400 mb-4">Effective Date: October 2026</p>
-            <div class="space-y-3 text-sm text-slate-300">
-                <p>We ensure secure, instant digital delivery of all purchased prompt packages worldwide.</p>
-                <p><strong>Secure Payments:</strong> Processed via Dodo Payments.</p>
-                <p><strong>Support:</strong> Contact us at <span class="text-orange-400">th5931417@gmail.com</span>.</p>
+            <div id="loggedInView" class="hidden text-center py-4 space-y-4">
+                <p class="text-sm text-slate-300">Signed in as: <span id="displayEmail" class="font-bold text-orange-400"></span></p>
+                <button onclick="handleLogout()" class="w-full bg-red-600 hover:bg-red-500 py-2.5 rounded-xl font-semibold text-sm transition">Sign Out</button>
             </div>
         </div>
     </div>
@@ -158,73 +106,73 @@
             <span class="text-lg">🏷️</span>
             <span class="mt-1">Categories</span>
         </button>
-        <button onclick="openPrivacy()" class="flex flex-col items-center text-slate-400 hover:text-white transition">
-            <span class="text-lg">🛡️</span>
-            <span class="mt-1">Support</span>
-        </button>
     </nav>
 
-    <!-- Dynamic Prompts Database & Smart Auto-Lock Logic -->
+    <!-- JavaScript Data & Logic (68 Prompts) -->
     <script>
         const rawPrompts = [
-            { title: "Viral Hook Generator Pro", category: "Social Media", prompt: "Act as a top-tier viral content strategist. Generate 10 high-converting hooks for a video about [Topic]. Make 5 emotional and 5 curiosity-driven.", tags: "Viral, Youtube, Reels" },
+            { title: "Viral Hook Generator Pro", category: "Social Media", prompt: "Act as a top-tier viral content strategist. Generate 10 high-converting hooks for a video about [Topic].", tags: "Viral, Youtube, Reels" },
             { title: "Advanced SEO Article Blueprint", category: "SEO & Content", prompt: "Generate a comprehensive SEO-optimized article outline for the keyword [Keyword] targeting search intent.", tags: "SEO, Content" },
-            { title: "Enterprise RegEx Generator", category: "Programming", prompt: "Generate a precise regular expression (RegEx) for the following requirement: [Requirement]. Provide explanation and test cases.", tags: "Programming, Coding" },
-            { title: "SaaS Pitch Deck & Copy Suite", category: "Business Strategy", prompt: "Create a compelling investor pitch deck copy outline for a SaaS startup focused on [Niche]. Include problem, solution, market size, and traction slides.", tags: "Business, Startup" },
-            { title: "Instagram Growth Engine", category: "Social Media", prompt: "Create a 30-day Instagram growth roadmap for a brand in the [Niche] niche, focusing on Reels and engagement.", tags: "Instagram, Social Media" },
-            { title: "YouTube Script Automation", category: "Social Media", prompt: "Write an engaging YouTube script about [Topic]. Include an attention-grabbing hook, body points, and a strong call-to-action.", tags: "YouTube, Script" },
-            { title: "Viral Twitter/X Thread Suite", category: "Social Media", prompt: "Write a viral 7-part Twitter/X thread about [Topic]. Make each tweet concise, punchy, and valuable.", tags: "Twitter, X, Thread" },
-            { title: "LinkedIn Authority Post Creator", category: "Social Media", prompt: "Draft a professional LinkedIn post about [Topic] using the hook-story-offer framework to drive comments and network reach.", tags: "LinkedIn, Professional" },
-            { title: "TikTok Trend Concept Builder", category: "Social Media", prompt: "Brainstorm 5 trending TikTok video ideas for [Brand/Niche], including audio suggestions and text-on-screen hooks.", tags: "TikTok, Viral" },
+            { title: "Enterprise RegEx Generator", category: "Programming", prompt: "Generate a precise regular expression (RegEx) for the following requirement: [Requirement].", tags: "Programming, Coding" },
+            { title: "SaaS Pitch Deck & Copy Suite", category: "Business Strategy", prompt: "Create a compelling investor pitch deck copy outline for a SaaS startup focused on [Niche].", tags: "Business, Startup" },
+            { title: "Instagram Growth Engine", category: "Social Media", prompt: "Create a 30-day Instagram growth roadmap for a brand in the [Niche] niche.", tags: "Instagram, Social Media" },
+            { title: "YouTube Script Automation", category: "Social Media", prompt: "Write an engaging YouTube script about [Topic]. Include hook, body points, and CTA.", tags: "YouTube, Script" },
+            { title: "Viral Twitter/X Thread Suite", category: "Social Media", prompt: "Write a viral 7-part Twitter/X thread about [Topic]. Make each tweet punchy and valuable.", tags: "Twitter, X, Thread" },
+            { title: "LinkedIn Authority Post Creator", category: "Social Media", prompt: "Draft a professional LinkedIn post about [Topic] using the hook-story-offer framework.", tags: "LinkedIn, Professional" },
+            { title: "TikTok Trend Concept Builder", category: "Social Media", prompt: "Brainstorm 5 trending TikTok video ideas for [Brand/Niche] with text-on-screen hooks.", tags: "TikTok, Viral" },
             { title: "High-ROI Facebook Ad Copy", category: "Marketing", prompt: "Write 3 high-converting Facebook ad variations for [Product/Service] using AIDA formula.", tags: "Facebook, Ads" },
-            { title: "Google Search Ads Engine", category: "Marketing", prompt: "Generate 5 headlines and 4 descriptions for a Google Search ad promoting [Product/Service] with target keyword [Keyword].", tags: "Google Ads, PPC" },
+            { title: "Google Search Ads Engine", category: "Marketing", prompt: "Generate 5 headlines and 4 descriptions for a Google Search ad promoting [Product/Service].", tags: "Google Ads, PPC" },
             { title: "Welcome Email Series Flow", category: "Marketing", prompt: "Write a 3-part welcome email sequence for new subscribers joining [Brand/Newsletter].", tags: "Email, Newsletter" },
-            { title: "B2B Cold Outreach Engine", category: "Marketing", prompt: "Write a high-converting cold email to a potential client in [Industry] offering [Service]. Keep it short and personalized.", tags: "Sales, Cold Email" },
-            { title: "Cart Recovery Email Flow", category: "E-commerce", prompt: "Write a persuasive abandoned cart recovery email for an e-commerce store selling [Product] with a discount incentive.", tags: "E-commerce, Sales" },
-            { title: "Conversion Product Description", category: "E-commerce", prompt: "Write an SEO-friendly, benefit-driven product description for [Product Name] with key features and specifications.", tags: "E-commerce, Copywriting" },
-            { title: "Review Management Assistant", category: "E-commerce", prompt: "Write polite and professional responses to both positive and negative customer reviews for [Business Type].", tags: "Customer Support" },
+            { title: "B2B Cold Outreach Engine", category: "Marketing", prompt: "Write a high-converting cold email to a potential client in [Industry] offering [Service].", tags: "Sales, Cold Email" },
+            { title: "Cart Recovery Email Flow", category: "E-commerce", prompt: "Write a persuasive abandoned cart recovery email for an e-commerce store selling [Product].", tags: "E-commerce, Sales" },
+            { title: "Conversion Product Description", category: "E-commerce", prompt: "Write an SEO-friendly, benefit-driven product description for [Product Name].", tags: "E-commerce, Copywriting" },
+            { title: "Review Management Assistant", category: "E-commerce", prompt: "Write polite and professional responses to customer reviews for [Business Type].", tags: "Customer Support" },
             { title: "Semantic Keyword Cluster Pro", category: "SEO & Content", prompt: "Group the following keywords into semantic clusters for content planning: [Keywords].", tags: "SEO, Keywords" },
-            { title: "Meta Tag Optimization Suite", category: "SEO & Content", prompt: "Write 3 click-worthy SEO meta titles and descriptions for a webpage about [Topic] under standard character limits.", tags: "SEO, Meta" },
+            { title: "Meta Tag Optimization Suite", category: "SEO & Content", prompt: "Write 3 click-worthy SEO meta titles and descriptions for a webpage about [Topic].", tags: "SEO, Meta" },
             { title: "Blog Intro & Outro Studio", category: "SEO & Content", prompt: "Write an engaging introduction and conclusion for a blog post titled [Blog Title].", tags: "Blogging, Content" },
-            { title: "Content Calendar Architect", category: "SEO & Content", prompt: "Create a 4-week content calendar outline for a blog focused on [Niche] with publishing frequency and content types.", tags: "Content Strategy" },
-            { title: "Python Code Debugging Suite", category: "Programming", prompt: "Analyze the following Python code snippet, identify bugs, explain why they occur, and provide the fixed code: [Code]", tags: "Python, Coding" },
-            { title: "JavaScript Performance Fixer", category: "Programming", prompt: "Fix the following JavaScript error or buggy function and optimize it for performance: [Code/Error]", tags: "JavaScript, Web" },
-            { title: "SQL Query Optimizer Pro", category: "Programming", prompt: "Write or optimize an SQL query to retrieve [Data Requirement] from a database table named [TableName].", tags: "SQL, Database" },
+            { title: "Content Calendar Architect", category: "SEO & Content", prompt: "Create a 4-week content calendar outline for a blog focused on [Niche].", tags: "Content Strategy" },
+            { title: "Python Code Debugging Suite", category: "Programming", prompt: "Analyze the following Python code snippet, identify bugs, and provide fixed code: [Code]", tags: "Python, Coding" },
+            { title: "JavaScript Performance Fixer", category: "Programming", prompt: "Fix the following JavaScript error or buggy function and optimize performance: [Code/Error]", tags: "JavaScript, Web" },
+            { title: "SQL Query Optimizer Pro", category: "Programming", prompt: "Write or optimize an SQL query to retrieve [Data Requirement] from [TableName].", tags: "SQL, Database" },
             { title: "Tailwind Landing Page Generator", category: "Programming", prompt: "Generate a responsive landing page section using HTML and Tailwind CSS for [Product/Service].", tags: "Tailwind, HTML" },
-            { title: "API Integration Masterclass", category: "Programming", prompt: "Write a step-by-step implementation guide and code example in JavaScript for integrating the [API Name] API.", tags: "API, Backend" },
-            { title: "React Component Generator Pro", category: "Programming", prompt: "Create a reusable functional React component in JavaScript/TypeScript for [Component Name] with Tailwind styling.", tags: "React, Frontend" },
+            { title: "API Integration Masterclass", category: "Programming", prompt: "Write a step-by-step guide and code example in JavaScript for integrating the [API Name] API.", tags: "API, Backend" },
+            { title: "React Component Generator Pro", category: "Programming", prompt: "Create a reusable functional React component in JavaScript for [Component Name].", tags: "React, Frontend" },
             { title: "Git Workflow Master Guide", category: "Programming", prompt: "Explain the workflow and git commands needed to [Task].", tags: "Git, DevOps" },
             { title: "Startup Business Plan Builder", category: "Business Strategy", prompt: "Create a comprehensive business plan outline for a startup in the [Industry] sector.", tags: "Startup, Business" },
             { title: "SWOT Strategic Analyzer", category: "Business Strategy", prompt: "Perform a detailed SWOT analysis (Strengths, Weaknesses, Opportunities, Threats) for [Business/Idea].", tags: "Strategy, Business" },
-            { title: "Competitor Market Matrix", category: "Business Strategy", prompt: "Create a competitor analysis matrix framework to evaluate competitors in the [Market Niche] market.", tags: "Competitor, Strategy" },
+            { title: "Competitor Market Matrix", category: "Business Strategy", prompt: "Create a competitor analysis matrix framework for [Market Niche].", tags: "Competitor, Strategy" },
             { title: "Enterprise Pricing Strategy", category: "Business Strategy", prompt: "Recommend an optimal pricing strategy for [Product/Service].", tags: "Pricing, Business" },
-            { title: "Brand Identity Architecture", category: "Business Strategy", prompt: "Write inspiring mission, vision, and core values statements for a brand in the [Industry] industry.", tags: "Branding" },
-            { title: "OKR & KPI Goal Setting Engine", category: "Business Strategy", prompt: "Define quarterly Objectives and Key Results (OKRs) and KPIs for a team working in [Department].", tags: "Management, Goals" },
+            { title: "Brand Identity Architecture", category: "Business Strategy", prompt: "Write mission, vision, and core values statements for a brand in [Industry].", tags: "Branding" },
+            { title: "OKR & KPI Goal Setting Engine", category: "Business Strategy", prompt: "Define quarterly Objectives, Key Results (OKRs), and KPIs for [Department].", tags: "Management, Goals" },
             { title: "Buyer Persona Profiler", category: "Marketing", prompt: "Create a detailed buyer persona profile for a target customer of [Product/Service].", tags: "Persona, Marketing" },
-            { title: "Podcast Interview Architect", category: "Social Media", prompt: "Create a structured interview outline and talking points for a podcast episode about [Topic].", tags: "Podcast, Audio" },
+            { title: "Podcast Interview Architect", category: "Social Media", prompt: "Create a structured interview outline and talking points for a podcast about [Topic].", tags: "Podcast, Audio" },
             { title: "PR Press Release Generator", category: "Marketing", prompt: "Write a professional press release announcing [Company Milestone/Product Launch].", tags: "PR, News" },
-            { title: "Website FAQ Generator", category: "SEO & Content", prompt: "Generate 5 comprehensive Frequently Asked Questions (FAQs) with clear answers for a website about [Topic].", tags: "FAQ, Website" },
-            { title: "High-Converting Page Copy", category: "Marketing", prompt: "Write high-converting headline, subheadline, and feature bullet points for a landing page selling [Product].", tags: "Copywriting, Landing Page" },
-            { title: "UX Microcopy Studio", category: "UI/UX", prompt: "Write clear and engaging UX microcopy for a button, error state, and empty state in an app for [App Type].", tags: "UX, Design" },
+            { title: "Website FAQ Generator", category: "SEO & Content", prompt: "Generate 5 comprehensive Frequently Asked Questions (FAQs) with clear answers for [Topic].", tags: "FAQ, Website" },
+            { title: "High-Converting Page Copy", category: "Marketing", prompt: "Write headline, subheadline, and bullet points for a landing page selling [Product].", tags: "Copywriting, Landing Page" },
+            { title: "UX Microcopy Studio", category: "UI/UX", prompt: "Write clear and engaging UX microcopy for a button and error state for [App Type].", tags: "UX, Design" },
             { title: "UI/UX Dashboard Reviewer", category: "UI/UX", prompt: "Provide a UI/UX review checklist evaluating a web dashboard for [Dashboard Type].", tags: "UI/UX, Design" },
-            { title: "App Feature Brainstormer Pro", category: "Product", prompt: "Brainstorm 10 innovative and high-retention features for a mobile app focused on [App Niche].", tags: "Product, Brainstorming" },
-            { title: "Agile User Story Writer", category: "Product", prompt: "Write Agile user stories with acceptance criteria for a feature that allows users to [Feature Description].", tags: "Product, Agile" }
-        ];
-
-        // Smart Auto-Lock Logic: Every 4th prompt is Pro, rest are Free
-        const promptsData = rawPrompts.map((item, index) => {
-            return {
-                ...item,
-                isPremium: (index + 1) % 4 === 0 
-            };
-        });
-
-        let currentFilter = 'all';
-
-        function renderPrompts(filter = '') {
-            const listContainer = document.getElementById('promptsList');
-            listContainer.innerHTML = '';
-
-            const filtered = promptsData.filter(item => {
-                const matchesSearch = item.title.toLowerCase().includes(filter.toLowerCase()) || 
-                 
+            { title: "App Feature Brainstormer Pro", category: "Product", prompt: "Brainstorm 10 innovative and high-retention features for a mobile app in [App Niche].", tags: "Product, Brainstorming" },
+            { title: "Agile User Story Writer", category: "Product", prompt: "Write Agile user stories with acceptance criteria for a feature allowing users to [Feature].", tags: "Product, Agile" },
+            { title: "C++ Memory Leak Debugger", category: "Programming", prompt: "Identify and resolve memory leaks in the following C++ code: [Code]", tags: "C++, Coding" },
+            { title: "Flutter UI Layout Expert", category: "Programming", prompt: "Write a Flutter widget layout code in Dart for [UI Component Description].", tags: "Flutter, Mobile" },
+            { title: "Docker Containerization Guide", category: "Programming", prompt: "Write an optimized Dockerfile and docker-compose.yml configuration for a [Tech Stack] app.", tags: "Docker, DevOps" },
+            { title: "Cybersecurity Vulnerability Scan", category: "Programming", prompt: "Analyze the following system architecture or code for security loopholes: [Details]", tags: "Security, Dev" },
+            { title: "AI Voiceover Script Director", category: "Social Media", prompt: "Format a script with pauses, emphasis, and tone markers for ElevenLabs voiceover about [Topic].", tags: "Audio, Voiceover" },
+            { title: "YouTube Thumbnail Concept Suite", category: "Social Media", prompt: "Generate 3 high-CTR YouTube thumbnail visual concepts and text overlays for [Video Title].", tags: "YouTube, Design" },
+            { title: "Pinterest Viral Pin Creator", category: "Social Media", prompt: "Write 5 engaging pin titles and descriptions optimized for Pinterest SEO about [Topic].", tags: "Pinterest, Traffic" },
+            { title: "Substack Newsletter Growth", category: "SEO & Content", prompt: "Create a monetization and subscriber retention strategy for a Substack about [Niche].", tags: "Substack, Writing" },
+            { title: "E-book Outline & Chapter Architect", category: "SEO & Content", prompt: "Generate a detailed 10-chapter e-book outline on the subject of [Subject].", tags: "E-book, Author" },
+            { title: "Ghostwriting Hook Master", category: "SEO & Content", prompt: "Write 10 viral opening lines for an essay or thought-leadership post about [Topic].", tags: "Ghostwriting, Essay" },
+            { title: "Affiliate Marketing Funnel Copy", category: "Marketing", prompt: "Write a high-converting bridge page promotion script for an affiliate offer in [Niche].", tags: "Affiliate, Sales" },
+            { title: "Webinar Slide Presentation Script", category: "Marketing", prompt: "Draft a 5-step high-ticket webinar presentation script selling [Offer/Product].", tags: "Webinar, Sales" },
+            { title: "Influencer Outreach DM Template", category: "Marketing", prompt: "Write a high-response Instagram DM collaboration pitch for micro-influencers in [Niche].", tags: "Influencer, Outreach" },
+            { title: "SMS Marketing Broadcast Pro", category: "Marketing", prompt: "Write 3 urgent, conversion-focused SMS promotional messages for a flash sale on [Product].", tags: "SMS, Mobile" },
+            { title: "Shopify Store Conversion Audit", category: "E-commerce", prompt: "Provide a 10-point conversion rate optimization (CRO) checklist for a Shopify store selling [Product].", tags: "Shopify, E-commerce" },
+            { title: "Amazon FBA Listing Optimizer", category: "E-commerce", prompt: "Write keyword-rich bullet points and product title for an Amazon FBA listing of [Product].", tags: "Amazon, FBA" },
+            { title: "Dropshipping Ad Video Blueprint", category: "E-commerce", prompt: "Write a 30-second problem-solution video ad script for a trending e-commerce product: [Product].", tags: "Dropshipping, Ads" },
+            { title: "Customer Refund Policy Drafter", category: "E-commerce", prompt: "Draft a clear, customer-friendly refund and return policy text for an online store.", tags: "Legal, E-commerce" },
+            { title: "HR Employee Onboarding Plan", category: "Business Strategy", prompt: "Create a 7-day remote employee onboarding schedule for a new hire in [Role].", tags: "HR, Management" },
+            { title: "Crisis PR Statement Generator", category: "Business Strategy", prompt: "Write a professional public relations crisis management response statement regarding [Issue].", tags: "PR, Corporate" },
+            { title: "Venture Capital Email Pitch", category: "Business Strategy", prompt: "Write a 150-word cold email pitch to a VC investor for a seed-stage startup in [Niche].", tags: "VC, Funding" },
+            { title: "Customer Success Retention Playbook", category: "Business Strategy", prompt: "Design an email check-in workflow to prevent customer churn for a SaaS tool.", tags: "SaaS, Support" },
+            { title: "UI Color Palette Generator", category: "UI/UX", prompt: "Suggest a modern dark-mode color palette with hex codes for a SaaS
