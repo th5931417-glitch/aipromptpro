@@ -3,118 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global AI Prompts Marketplace | #1 Digital Asset Platform</title>
-    
-    <!-- Global SEO Meta Tags -->
-    <meta name="description" content="Discover, copy, and deploy elite AI prompts for ChatGPT, Claude & Gemini. Trusted by thousands of global digital creators and businesses.">
+    <title>PromptsMarket Global | AI Prompt Library for ChatGPT, Claude & Gemini</title>
+    <meta name="description" content="Discover, customize, and run ready-made AI prompts in ChatGPT, Claude & Gemini. Marketing, SEO, programming, business and more.">
     <meta name="robots" content="index, follow">
-
-    <!-- Tailwind CSS CDN -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌐%3C/text%3E%3C/svg%3E">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
 </head>
-<body class="bg-[#070b14] text-slate-100 font-sans min-h-screen flex flex-col justify-between selection:bg-orange-500 selection:text-white">
+<body class="bg-[#070b14] text-slate-100 font-sans min-h-screen flex flex-col selection:bg-orange-500 selection:text-white">
 
-    <!-- Top Global Flash Sale Banner -->
+    <!-- Top Banner -->
     <div class="bg-gradient-to-r from-orange-600 via-amber-600 to-yellow-600 text-center py-2 px-4 text-xs font-bold flex items-center justify-center gap-2 text-white shadow-md">
-        <span>⚡ <strong>Global Super Deal:</strong> Unlock All 68+ Enterprise Prompts for $4.99 (Save 80% Today!)</span>
-        <a href="https://app.dodopayments.com/buy" target="_blank" class="bg-black text-amber-400 px-3 py-0.5 rounded-full text-[10px] uppercase tracking-wider hover:bg-gray-900 transition shadow">Get Access</a>
+        <span>⚡ Unlock all <span class="js-total">65</span> prompts with Pro Pass for $4.99</span>
+        <a href="https://app.dodopayments.com/buy" target="_blank" rel="noopener" class="bg-black text-amber-400 px-3 py-0.5 rounded-full text-[10px] uppercase tracking-wider hover:bg-gray-900 transition shadow">Get Access</a>
     </div>
 
-    <!-- Header / Navbar -->
-    <header class="p-4 border-b border-slate-800/80 flex justify-between items-center bg-[#0b101d] sticky top-0 z-50 backdrop-blur-md bg-opacity-95">
-        <div class="flex items-center gap-2 cursor-pointer" onclick="switchTab('items')">
+    <!-- Header -->
+    <header class="p-4 border-b border-slate-800/80 flex justify-between items-center bg-[#0b101d]/95 sticky top-0 z-40 backdrop-blur-md">
+        <button type="button" class="flex items-center gap-2" onclick="switchTab('items')">
             <span class="text-xl">🌐</span>
-            <h1 class="text-base font-extrabold tracking-tight bg-gradient-to-r from-orange-400 to-amber-200 bg-clip-text text-transparent">PromptsMarket Global</h1>
-        </div>
+            <span class="text-base font-extrabold tracking-tight bg-gradient-to-r from-orange-400 to-amber-200 bg-clip-text text-transparent">PromptsMarket Global</span>
+        </button>
         <div class="flex items-center gap-2">
-            <a href="https://app.dodopayments.com/buy" target="_blank" class="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-black text-xs px-3.5 py-1.5 rounded-full font-extrabold shadow-lg shadow-orange-500/20 transition">
-                <span>👑 Pro Pass ($4.99)</span>
-            </a>
-            <button onclick="toggleAuthModal()" class="bg-slate-800 hover:bg-slate-700 text-xs px-3 py-1.5 rounded-full font-medium border border-slate-700 transition">
-                Account
-            </button>
+            <a id="proBtn" href="https://app.dodopayments.com/buy" target="_blank" rel="noopener" class="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-black text-xs px-3.5 py-1.5 rounded-full font-extrabold shadow-lg shadow-orange-500/20 transition">👑 Pro Pass ($4.99)</a>
+            <button type="button" id="accountBtn" onclick="openAuth()" class="bg-slate-800 hover:bg-slate-700 text-xs px-3 py-1.5 rounded-full font-medium border border-slate-700 transition max-w-[110px] truncate">Sign in</button>
         </div>
     </header>
 
-    <!-- Main Marketplace Container -->
     <main class="p-4 max-w-xl mx-auto w-full flex-grow pb-28">
-        
-        <!-- Marketplace Sub-Header -->
-        <div class="my-3 text-center">
-            <h2 class="text-xs text-orange-400 uppercase tracking-widest font-bold mb-1">Global Digital Asset Hub</h2>
-            <p class="text-xs text-slate-400">Tested and verified with ChatGPT, Claude 3.5 & Gemini Pro.</p>
-        </div>
 
-        <!-- Search Bar -->
-        <div class="mb-4">
-            <input type="text" id="searchInput" oninput="filterPrompts()" placeholder="🔍 Search 68+ prompts (e.g., Marketing, Python)..." class="w-full bg-[#101726] border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500 shadow-inner">
-        </div>
+        <!-- ========== MARKETPLACE VIEW ========== -->
+        <section id="view-items">
+            <div class="my-3 text-center">
+                <h2 class="text-xs text-orange-400 uppercase tracking-widest font-bold mb-1">AI Prompt Library</h2>
+                <p class="text-xs text-slate-400">Fill in your topic, then run it in ChatGPT, Claude or Gemini.</p>
+            </div>
 
-        <!-- Trust Bar -->
-        <div class="mb-5 bg-[#101726] border border-slate-800 rounded-xl p-3 flex justify-between items-center text-xs text-slate-300 shadow-md">
-            <div class="flex items-center gap-1.5"><span class="text-emerald-400 font-bold">✔ Buyer Protection</span></div>
-            <div class="flex items-center gap-1.5"><span class="text-amber-400 font-bold">★ 4.9/5 (1,420 Reviews)</span></div>
-        </div>
+            <div class="mb-3">
+                <input type="text" id="searchInput" oninput="renderPrompts()" placeholder="🔍 Search prompts (e.g. Marketing, Python)..." class="w-full bg-[#101726] border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500 shadow-inner">
+            </div>
 
-        <!-- Prompts Catalog List -->
-        <div id="promptsList" class="space-y-3">
-            <!-- Dynamic Prompts List -->
-        </div>
+            <div class="mb-4 bg-[#101726] border border-slate-800 rounded-xl p-3 flex justify-between items-center text-xs text-slate-300 shadow-md">
+                <span class="text-emerald-400 font-bold">✔ Secure checkout</span>
+                <span class="text-amber-400 font-bold">ChatGPT · Claude · Gemini</span>
+            </div>
+
+            <div id="filterBar" class="hidden mb-3 flex items-center justify-between bg-[#101726] border border-orange-500/30 rounded-xl px-3 py-2 text-xs">
+                <span class="text-slate-300">Category: <strong id="filterName" class="text-orange-400"></strong></span>
+                <button type="button" onclick="setCategory('all')" class="text-slate-400 hover:text-white font-bold">✕ Clear</button>
+            </div>
+
+            <div id="promptsList" class="space-y-3"></div>
+        </section>
+
+        <!-- ========== CATEGORIES VIEW ========== -->
+        <section id="view-categories" class="hidden">
+            <div class="my-3 text-center">
+                <h2 class="text-xs text-orange-400 uppercase tracking-widest font-bold mb-1">Browse Categories</h2>
+                <p class="text-xs text-slate-400">Tap a category to see its prompts.</p>
+            </div>
+            <div id="categoriesGrid" class="grid grid-cols-2 gap-3"></div>
+        </section>
+
+        <!-- ========== PRIVACY VIEW ========== -->
+        <section id="view-privacy" class="hidden">
+            <div class="my-3 text-center">
+                <h2 class="text-xs text-orange-400 uppercase tracking-widest font-bold mb-1">Privacy Policy</h2>
+                <p class="text-xs text-slate-400">Last updated: October 2026</p>
+            </div>
+            <div class="space-y-3 text-sm text-slate-300 leading-relaxed">
+                <div class="bg-[#101726] border border-slate-800 rounded-xl p-4">
+                    <h3 class="font-bold text-white mb-1">What we store</h3>
+                    <p class="text-xs">When you sign in, your email address is saved only in your own browser (local storage) so the site can remember you. We do not run a server database of accounts on this site. Signing out removes it from your browser.</p>
+                </div>
+                <div class="bg-[#101726] border border-slate-800 rounded-xl p-4">
+                    <h3 class="font-bold text-white mb-1">Your text entries</h3>
+                    <p class="text-xs">The topic or details you type to customize a prompt stay in your browser. We do not save or send them to us. They are shared only when you tap Run, which opens ChatGPT, Claude or Gemini with your finished prompt.</p>
+                </div>
+                <div class="bg-[#101726] border border-slate-800 rounded-xl p-4">
+                    <h3 class="font-bold text-white mb-1">Third-party services</h3>
+                    <p class="text-xs">Payments are handled by Dodo Payments on their own checkout page; we do not see or store your card details. ChatGPT, Claude and Gemini are run by other companies and handle your prompts under their own privacy policies.</p>
+                </div>
+                <div class="bg-[#101726] border border-slate-800 rounded-xl p-4">
+                    <h3 class="font-bold text-white mb-1">Your control</h3>
+                    <p class="text-xs">Use Sign out in the Account menu to remove your email from this browser. You can also clear this site's data in your browser settings at any time.</p>
+                </div>
+                <div class="bg-[#101726] border border-slate-800 rounded-xl p-4">
+                    <h3 class="font-bold text-white mb-1">Contact</h3>
+                    <p class="text-xs">Questions about privacy or your purchase? Contact the site owner using the support email shown on your payment receipt.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Detail View & Direct AI Run Modal (with Custom Topic Entry Input) -->
-    <div id="detailModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden z-50 p-4 flex items-center justify-center">
+    <!-- Prompt Detail Modal -->
+    <div id="detailModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden z-50 p-4 items-center justify-center" onclick="if(event.target===this)closeModal()">
         <div class="bg-[#101726] border border-slate-800 w-full max-w-lg rounded-2xl p-5 relative max-h-[90vh] overflow-y-auto shadow-2xl">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl font-bold">✕</button>
+            <button type="button" onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl font-bold" aria-label="Close">✕</button>
             <div id="modalContent"></div>
         </div>
     </div>
 
-    <!-- Auth / Account Modal (Sign up / Log out) -->
-    <div id="authModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden z-50 p-4 flex items-center justify-center">
+    <!-- Account Modal -->
+    <div id="authModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden z-50 p-4 items-center justify-center" onclick="if(event.target===this)closeAuth()">
         <div class="bg-[#101726] border border-slate-800 w-full max-w-md rounded-2xl p-6 relative shadow-2xl">
-            <button onclick="toggleAuthModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl font-bold">✕</button>
+            <button type="button" onclick="closeAuth()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl font-bold" aria-label="Close">✕</button>
+
             <div id="authForm" class="space-y-4">
-                <h2 class="text-lg font-bold mb-2">Member Portal</h2>
-                <p class="text-xs text-slate-400 mb-4">Sign up or log in to sync your Pro Pass and saved assets.</p>
+                <h2 class="text-lg font-bold">Member Portal</h2>
+                <p class="text-xs text-slate-400">Sign in with your email to open prompts and keep your Pro Pass.</p>
                 <div>
-                    <label class="text-xs text-slate-400 block mb-1">Email Address</label>
-                    <input type="email" id="userEmailInput" placeholder="name@example.com" class="w-full bg-[#151e30] border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500">
+                    <label for="userEmailInput" class="text-xs text-slate-400 block mb-1">Email address</label>
+                    <input type="email" id="userEmailInput" autocomplete="email" placeholder="name@example.com" class="w-full bg-[#151e30] border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500" onkeydown="if(event.key==='Enter')handleAuthAction()">
+                    <p id="authError" class="text-xs text-red-400 mt-1 hidden"></p>
                 </div>
-                <button onclick="handleAuthAction()" class="w-full bg-orange-600 hover:bg-orange-500 py-3 rounded-xl font-bold text-sm transition text-black font-extrabold">Continue / Sign Up</button>
+                <button type="button" onclick="handleAuthAction()" class="w-full bg-orange-500 hover:bg-orange-400 py-3 rounded-xl text-sm transition text-black font-extrabold">Continue / Sign Up</button>
             </div>
-            <div id="loggedInView" class="hidden text-center py-4 space-y-4">
-                <p class="text-sm text-slate-300">Signed in as: <br><span id="displayEmail" class="font-bold text-orange-400 text-sm"></span></p>
-                <div class="p-3 bg-[#151e30] rounded-xl text-xs text-slate-300">Pro Pass Status: <strong class="text-amber-400">Standard Member</strong></div>
-                <button onclick="handleLogout()" class="w-full bg-red-600 hover:bg-red-500 py-2.5 rounded-xl font-semibold text-sm transition">Sign Out</button>
+
+            <div id="loggedInView" class="hidden text-center py-2 space-y-4">
+                <p class="text-sm text-slate-300">Signed in as<br><span id="displayEmail" class="font-bold text-orange-400 text-sm break-all"></span></p>
+                <div class="p-3 bg-[#151e30] rounded-xl text-xs text-slate-300">Status: <strong id="memberStatus" class="text-amber-400">Free Member</strong></div>
+
+                <div id="proCodeBox" class="hidden text-left">
+                    <label for="proCodeInput" class="text-xs text-slate-400 block mb-1">Have a Pro access code?</label>
+                    <div class="flex gap-2">
+                        <input type="text" id="proCodeInput" placeholder="Enter code" class="flex-1 bg-[#151e30] border border-slate-800 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-orange-500">
+                        <button type="button" onclick="activatePro()" class="bg-amber-500 hover:bg-amber-400 text-black text-xs font-extrabold px-4 rounded-xl">Activate</button>
+                    </div>
+                </div>
+
+                <a href="https://app.dodopayments.com/buy" target="_blank" rel="noopener" id="upgradeLink" class="block w-full bg-gradient-to-r from-orange-500 to-amber-500 text-black py-2.5 rounded-xl font-extrabold text-sm">👑 Upgrade to Pro ($4.99)</a>
+                <button type="button" onclick="handleLogout()" class="w-full bg-red-600 hover:bg-red-500 py-2.5 rounded-xl font-semibold text-sm transition">Sign Out</button>
             </div>
         </div>
     </div>
 
-    <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-orange-600 text-white text-xs px-4 py-2.5 rounded-xl border border-orange-400/40 shadow-2xl hidden z-50 transition-all font-medium">
-        Copied successfully!
-    </div>
+    <!-- Toast -->
+    <div id="toast" class="fixed bottom-24 left-1/2 -translate-x-1/2 bg-orange-600 text-white text-xs px-4 py-2.5 rounded-xl border border-orange-400/40 shadow-2xl hidden z-[60] font-medium max-w-[90%] text-center"></div>
 
-    <!-- Bottom Navigation Bar -->
+    <!-- Bottom Nav -->
     <nav class="fixed bottom-0 left-0 right-0 bg-[#0b101d]/95 backdrop-blur-md border-t border-slate-800 flex justify-around py-3 z-40 text-xs">
-        <button onclick="switchTab('items')" id="navMarket" class="flex flex-col items-center text-orange-400 font-semibold transition">
-            <span class="text-lg">📦</span>
-            <span class="mt-1">Marketplace</span>
+        <button type="button" onclick="switchTab('items')" id="nav-items" class="flex flex-col items-center text-orange-400 font-semibold transition">
+            <span class="text-lg">📦</span><span class="mt-1">Marketplace</span>
         </button>
-        <button onclick="switchTab('categories')" id="navCategories" class="flex flex-col items-center text-slate-400 hover:text-white transition">
-            <span class="text-lg">🏷️</span>
-            <span class="mt-1">Categories</span>
+        <button type="button" onclick="switchTab('categories')" id="nav-categories" class="flex flex-col items-center text-slate-400 hover:text-white transition">
+            <span class="text-lg">🏷️</span><span class="mt-1">Categories</span>
         </button>
-        <button onclick="switchTab('privacy')" id="navPrivacy" class="flex flex-col items-center text-slate-400 hover:text-white transition">
-            <span class="text-lg">🔒</span>
-            <span class="mt-1">Privacy</span>
+        <button type="button" onclick="switchTab('privacy')" id="nav-privacy" class="flex flex-col items-center text-slate-400 hover:text-white transition">
+            <span class="text-lg">🔒</span><span class="mt-1">Privacy</span>
         </button>
     </nav>
 
-    <!-- JavaScript Data & Logic (All 68 Prompts + Custom Input + Direct AI Run) -->
     <script>
-        const rawPrompts = [
+    (function () {
+        'use strict';
+
+        /* ================= SETTINGS ================= */
+        var CHECKOUT_URL = 'https://app.dodopayments.com/buy';
+        // Optional: add Pro access codes here (e.g. ['PRO-ABC123']). Empty = the code box stays hidden.
+        var PRO_CODES = [];
+        // Every 3rd prompt is free, the rest are Pro. Change 3 to any number you like.
+        var FREE_EVERY = 3;
+        var QUALITY_FOOTER = 'Give a clear, well-structured answer with headings and bullet points. Make it practical and ready to use. If a key detail is missing, ask me one short question first.';
+
+        /* ================= DATA ================= */
+        var rawPrompts = [
             { title: "Viral Hook Generator Pro", category: "Social Media", prompt: "Act as a top-tier viral content strategist. Generate 10 high-converting hooks for a video about [Topic]." },
             { title: "Advanced SEO Article Blueprint", category: "SEO & Content", prompt: "Generate a comprehensive SEO-optimized article outline for the keyword [Keyword] targeting search intent." },
             { title: "Enterprise RegEx Generator", category: "Programming", prompt: "Generate a precise regular expression (RegEx) for the following requirement: [Requirement]." },
@@ -155,47 +212,4 @@
             { title: "High-Converting Page Copy", category: "Marketing", prompt: "Write headline, subheadline, and bullet points for a landing page selling [Product]." },
             { title: "UX Microcopy Studio", category: "UI/UX", prompt: "Write clear and engaging UX microcopy for a button and error state for [App Type]." },
             { title: "UI/UX Dashboard Reviewer", category: "UI/UX", prompt: "Provide a UI/UX review checklist evaluating a web dashboard for [Dashboard Type]." },
-            { title: "App Feature Brainstormer Pro", category: "Product", prompt: "Brainstorm 10 innovative and high-retention features for a mobile app in [App Niche]." },
-            { title: "Agile User Story Writer", category: "Product", prompt: "Write Agile user stories with acceptance criteria for a feature allowing users to [Feature]." },
-            { title: "C++ Memory Leak Debugger", category: "Programming", prompt: "Identify and resolve memory leaks in the following C++ code: [Code]" },
-            { title: "Flutter UI Layout Expert", category: "Programming", prompt: "Write a Flutter widget layout code in Dart for [UI Component Description]." },
-            { title: "Docker Containerization Guide", category: "Programming", prompt: "Write an optimized Dockerfile and docker-compose.yml configuration for a [Tech Stack] app." },
-            { title: "Cybersecurity Vulnerability Scan", category: "Programming", prompt: "Analyze the following system architecture or code for security loopholes: [Details]" },
-            { title: "AI Voiceover Script Director", category: "Social Media", prompt: "Format a script with pauses, emphasis, and tone markers for ElevenLabs voiceover about [Topic]." },
-            { title: "YouTube Thumbnail Concept Suite", category: "Social Media", prompt: "Generate 3 high-CTR YouTube thumbnail visual concepts and text overlays for [Video Title]." },
-            { title: "Pinterest Viral Pin Creator", category: "Social Media", prompt: "Write 5 engaging pin titles and descriptions optimized for Pinterest SEO about [Topic]." },
-            { title: "Substack Newsletter Growth", category: "SEO & Content", prompt: "Create a monetization and subscriber retention strategy for a Substack about [Niche]." },
-            { title: "E-book Outline & Chapter Architect", category: "SEO & Content", prompt: "Generate a detailed 10-chapter e-book outline on the subject of [Subject]." },
-            { title: "Ghostwriting Hook Master", category: "SEO & Content", prompt: "Write 10 viral opening lines for an essay or thought-leadership post about [Topic]." },
-            { title: "Affiliate Marketing Funnel Copy", category: "Marketing", prompt: "Write a high-converting bridge page promotion script for an affiliate offer in [Niche]." },
-            { title: "Webinar Slide Presentation Script", category: "Marketing", prompt: "Draft a 5-step high-ticket webinar presentation script selling [Offer/Product]." },
-            { title: "Influencer Outreach DM Template", category: "Marketing", prompt: "Write a high-response Instagram DM collaboration pitch for micro-influencers in [Niche]." },
-            { title: "SMS Marketing Broadcast Pro", category: "Marketing", prompt: "Write 3 urgent, conversion-focused SMS promotional messages for a flash sale on [Product]." },
-            { title: "Shopify Store Conversion Audit", category: "E-commerce", prompt: "Provide a 10-point conversion rate optimization (CRO) checklist for a Shopify store selling [Product]." },
-            { title: "Amazon FBA Listing Optimizer", category: "E-commerce", prompt: "Write keyword-rich bullet points and product title for an Amazon FBA listing of [Product]." },
-            { title: "Dropshipping Ad Video Blueprint", category: "E-commerce", prompt: "Write a 30-second problem-solution video ad script for a trending e-commerce product: [Product]." },
-            { title: "Customer Refund Policy Drafter", category: "E-commerce", prompt: "Draft a clear, customer-friendly refund and return policy text for an online store." },
-            { title: "HR Employee Onboarding Plan", category: "Business Strategy", prompt: "Create a 7-day remote employee onboarding schedule for a new hire in [Role]." },
-            { title: "Crisis PR Statement Generator", category: "Business Strategy", prompt: "Write a professional public relations crisis management response statement regarding [Issue]." },
-            { title: "Venture Capital Email Pitch", category: "Business Strategy", prompt: "Write a 150-word cold email pitch to a VC investor for a seed-stage startup in [Niche]." },
-            { title: "Customer Success Retention Playbook", category: "Business Strategy", prompt: "Design an email check-in workflow to prevent customer churn for a SaaS tool." },
-            { title: "UI Color Palette Generator", category: "UI/UX", prompt: "Suggest a modern dark-mode color palette with hex codes for a SaaS application in [Niche]." },
-            { title: "Mobile App Onboarding Flow", category: "UI/UX", prompt: "Design a 3-screen welcome onboarding text and visual sequence for a fitness app." },
-            { title: "Gamification Strategy Designer", category: "Product", prompt: "Incorporate badges, streaks, and reward systems to increase user retention in [App Type]." },
-            { title: "Feature Prioritization Matrix", category: "Product", prompt: "Apply the RICE scoring model to evaluate and rank 5 proposed product features for [App]." }
-        ];
-
-        const promptsData = rawPrompts.map((item, index) => ({
-            ...item,
-            isPremium: (index + 1) % 5 === 0
-        }));
-
-        let currentFilter = 'all';
-
-        function renderPrompts(query = '') {
-            const container = document.getElementById('promptsList');
-            if (!container) return;
-            container.innerHTML = '';
-
-            const filtered = promptsData.filter(item => {
-                const matchesSear
+            { title: "App Feature Brainstormer Pro", category: "Product", prompt: "Brainstorm 10 innovative and high-retention feature
